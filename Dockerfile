@@ -1,6 +1,5 @@
-FROM python:3
+FROM public.ecr.aws/docker/library/python:3
 
-ARG COMMAND
 VOLUME /workdir
 WORKDIR /workdir
 
