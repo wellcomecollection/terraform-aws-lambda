@@ -3,7 +3,7 @@ variable "name" {
 }
 
 variable "lambda_tags" {
-  type = map(string)
+  type    = map(string)
   default = null
 }
 
@@ -12,12 +12,12 @@ variable "lambda_tags" {
 // https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function#argument-reference
 
 variable "architectures" {
-  type = set(string)
+  type    = set(string)
   default = null
 }
 
 variable "code_signing_config_arn" {
-  type = string
+  type    = string
   default = null
 }
 
@@ -29,7 +29,7 @@ variable "dead_letter_config" {
 }
 
 variable "description" {
-  type = string
+  type    = string
   default = null
 }
 
@@ -49,88 +49,88 @@ variable "ephemeral_storage" {
 
 variable "file_system_config" {
   type = object({
-    arn = string
+    arn              = string
     local_mount_path = string
   })
   default = null
 }
 
 variable "filename" {
-  type = string
+  type    = string
   default = null
 }
 
 variable "handler" {
-  type = string
+  type    = string
   default = null
 }
 
 variable "image_config" {
   type = object({
-    command = optional(set(string))
-    entry_point = optional(set(string))
+    command           = optional(set(string))
+    entry_point       = optional(set(string))
     working_directory = optional(string)
   })
   default = null
 }
 
 variable "image_uri" {
-  type = string
+  type    = string
   default = null
 }
 
 variable "kms_key_arn" {
-  type = string
+  type    = string
   default = null
 }
 
 variable "layers" {
-  type = set(string)
+  type    = set(string)
   default = null
 }
 
 variable "memory_size" {
-  type = number
+  type    = number
   default = null
 }
 
 variable "package_type" {
-  type = string
+  type    = string
   default = null
 }
 
 variable "publish" {
-  type = bool
+  type    = bool
   default = null
 }
 
 variable "reserved_concurrent_executions" {
-  type = number
+  type    = number
   default = null
 }
 
 variable "runtime" {
-  type = string
+  type    = string
   default = null
 }
 
 variable "s3_bucket" {
-  type = string
+  type    = string
   default = null
 }
 
 variable "s3_key" {
-  type = string
+  type    = string
   default = null
 }
 
 variable "s3_object_version" {
-  type = string
+  type    = string
   default = null
 }
 
 variable "source_code_hash" {
-  type = string
+  type    = string
   default = null
 }
 
@@ -142,7 +142,7 @@ variable "snap_start" {
 }
 
 variable "timeout" {
-  type = number
+  type    = number
   default = null
 }
 
@@ -156,7 +156,7 @@ variable "tracing_config" {
 variable "vpc_config" {
   type = object({
     security_group_ids = set(string)
-    subnet_ids = set(string)
+    subnet_ids         = set(string)
   })
   default = null
 }
