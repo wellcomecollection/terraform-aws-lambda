@@ -7,6 +7,11 @@ variable "lambda_tags" {
   default = null
 }
 
+variable "forward_logs_to_elastic" {
+  type = bool
+  default = true
+}
+
 // Below this line are all arguments for the Lambda which will be used directly
 // Note that blocks need to be specified as objects
 // https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function#argument-reference
