@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.0.4 - 2023-01-03
+
+Actually fix dynamic module counts
+
 ## v1.0.3 - 2023-01-03
 
 Fix dynamic module counts
