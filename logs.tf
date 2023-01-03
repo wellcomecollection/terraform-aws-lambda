@@ -4,7 +4,7 @@ resource "aws_cloudwatch_log_group" "lambda" {
 }
 
 resource "aws_cloudwatch_log_subscription_filter" "kinesis" {
-  for_each = var.forward_logs_to_elastic ? [true] : []
+  for_each = var.forward_logs_to_elastic ? [{}] : []
 
   name            = "lambda-logs-to-kinesis"
   log_group_name  = aws_cloudwatch_log_group.lambda.name

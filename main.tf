@@ -8,26 +8,26 @@ resource "aws_lambda_function" "main" {
   architectures           = var.architectures
   code_signing_config_arn = var.code_signing_config_arn
   dynamic "dead_letter_config" {
-    for_each = var.dead_letter_config == null ? [] : [true]
+    for_each = var.dead_letter_config == null ? [] : [{}]
     content {
       target_arn = var.dead_letter_config.target_arn
     }
   }
   description = var.description
   dynamic "environment" {
-    for_each = var.environment == null ? [] : [true]
+    for_each = var.environment == null ? [] : [{}]
     content {
       variables = var.environment.variables
     }
   }
   dynamic "ephemeral_storage" {
-    for_each = var.ephemeral_storage == null ? [] : [true]
+    for_each = var.ephemeral_storage == null ? [] : [{}]
     content {
       size = var.ephemeral_storage.size
     }
   }
   dynamic "file_system_config" {
-    for_each = var.file_system_config == null ? [] : [true]
+    for_each = var.file_system_config == null ? [] : [{}]
     content {
       arn              = var.file_system_config.arn
       local_mount_path = var.file_system_config.local_mount_path
@@ -36,7 +36,7 @@ resource "aws_lambda_function" "main" {
   filename = var.filename
   handler  = var.handler
   dynamic "image_config" {
-    for_each = var.image_config == null ? [] : [true]
+    for_each = var.image_config == null ? [] : [{}]
     content {
       command           = var.image_config.command
       entry_point       = var.image_config.entry_point
@@ -56,20 +56,20 @@ resource "aws_lambda_function" "main" {
   s3_object_version              = var.s3_object_version
   source_code_hash               = var.source_code_hash
   dynamic "snap_start" {
-    for_each = var.snap_start == null ? [] : [true]
+    for_each = var.snap_start == null ? [] : [{}]
     content {
       apply_on = var.snap_start.apply_on
     }
   }
   timeout = var.timeout
   dynamic "tracing_config" {
-    for_each = var.tracing_config == null ? [] : [true]
+    for_each = var.tracing_config == null ? [] : [{}]
     content {
       mode = var.tracing_config.mode
     }
   }
   dynamic "vpc_config" {
-    for_each = var.vpc_config == null ? [] : [true]
+    for_each = var.vpc_config == null ? [] : [{}]
     content {
       security_group_ids = var.vpc_config.security_group_ids
       subnet_ids         = var.vpc_config.subnet_ids
