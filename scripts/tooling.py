@@ -197,8 +197,9 @@ def update_changelog_and_version():
     assert "\r" not in contents
     lines = contents.split("\n")
     assert contents == "\n".join(lines)
+    beginning = contents
     for i, l in enumerate(lines):
-        if CHANGELOG_HEADER.match(l) or l == "# CHANGELOG":
+        if CHANGELOG_HEADER.match(l):
             beginning = "\n".join(lines[:i])
             rest = "\n".join(lines[i:])
             assert "\n".join((beginning, rest)) == contents
