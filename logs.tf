@@ -4,9 +4,9 @@ resource "aws_cloudwatch_log_group" "lambda" {
 }
 
 resource "aws_cloudwatch_log_subscription_filter" "kinesis" {
-  for_each = var.forward_logs_to_elastic ? [{}] : []
+  for_each = var.forward_logs_to_elastic ? toset(["lambda-logs-to-kinesis"]) : toset([])
 
-  name            = "lambda-logs-to-kinesis"
+  name            = each.value
   log_group_name  = aws_cloudwatch_log_group.lambda.name
   destination_arn = data.aws_ssm_parameter.log_destination.value
   filter_pattern  = "" // An empty pattern matches all logs
