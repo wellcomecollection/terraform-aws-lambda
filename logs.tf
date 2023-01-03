@@ -13,5 +13,5 @@ resource "aws_cloudwatch_log_subscription_filter" "kinesis" {
 }
 
 data "aws_ssm_parameter" "log_destination" {
-  name = "/logging/esf/destination_arn"
+  name = "/logging/forwarder/destination_arn"
 }
