@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.1.0 - 2023-01-03
+
+Automatically configure IAM permissions for Lambdas with VPC attachments
+
 ## v1.0.4 - 2023-01-03
 
 Actually fix dynamic module counts
