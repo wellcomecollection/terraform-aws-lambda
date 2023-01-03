@@ -198,6 +198,7 @@ def update_changelog_and_version():
     lines = contents.split("\n")
     assert contents == "\n".join(lines)
     beginning = contents
+    rest = ""
     for i, l in enumerate(lines):
         if CHANGELOG_HEADER.match(l):
             beginning = "\n".join(lines[:i])
