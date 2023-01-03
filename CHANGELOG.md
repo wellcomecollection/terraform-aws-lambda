@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.0.3 - 2023-01-03
+
+Fix dynamic module counts
+
 ## v1.0.2 - 2023-01-03
 
 A more agnostically named logging destination
