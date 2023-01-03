@@ -8,7 +8,7 @@ variable "lambda_tags" {
 }
 
 variable "forward_logs_to_elastic" {
-  type = bool
+  type    = bool
   default = true
 }
 
