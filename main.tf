@@ -4,6 +4,17 @@ resource "aws_lambda_function" "main" {
 
   tags = var.lambda_tags
 
+  // These are likely to be mutually exclusive, which is the rationale for using all of them at once
+  // Unfortunately lifecycle config can't be parameterised, and consumers of the module might be using
+  // any of these 3 methods of specifying the Lambda source
+  lifecycle {
+    ignore_changes = [
+      filename,
+      image_uri,
+      s3_object_version
+    ]
+  }
+
   // All parameters below are passed through directly
   architectures           = var.architectures
   code_signing_config_arn = var.code_signing_config_arn
