@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.1.1 - 2023-01-11
+
+Ignore state changes pertaining to the code that the Lambda hosts
+
 ## v1.1.0 - 2023-01-03
 
 Automatically configure IAM permissions for Lambdas with VPC attachments
