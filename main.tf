@@ -5,7 +5,7 @@ resource "aws_lambda_function" "main" {
   tags = var.lambda_tags
 
   // These are likely to be mutually exclusive, which is the rationale for using all of them at once
-  // Unfortunately lifecycle config can't be parametrised, and consumers of the module might be using
+  // Unfortunately lifecycle config can't be parameterised, and consumers of the module might be using
   // any of these 3 methods of specifying the Lambda source
   lifecycle {
     ignore_changes = [
