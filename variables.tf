@@ -13,7 +13,7 @@ variable "forward_logs_to_elastic" {
 }
 
 variable "alert_on_errors" {
-  type = bool
+  type    = bool
   default = true
 }
 

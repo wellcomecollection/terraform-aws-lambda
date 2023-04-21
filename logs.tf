@@ -35,7 +35,7 @@ locals {
   account_name = split("-", data.aws_iam_session_context.current.issuer_name)[0]
 }
 
-resource "aws_cloudwatch_metric_alarm" "lambda_errors"{
+resource "aws_cloudwatch_metric_alarm" "lambda_errors" {
   for_each = var.alert_on_errors ? toset(["lambda-${var.name}-errors"]) : toset([])
 
   alarm_name          = each.value
