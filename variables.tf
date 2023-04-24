@@ -12,9 +12,9 @@ variable "forward_logs_to_elastic" {
   default = true
 }
 
-variable "alert_on_errors" {
-  type    = bool
-  default = true
+variable "error_alarm_topic_arn" {
+  type    = string
+  default = null
 }
 
 // Below this line are all arguments for the Lambda which will be used directly
