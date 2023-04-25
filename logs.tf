@@ -17,7 +17,7 @@ data "aws_ssm_parameter" "log_destination" {
 }
 
 resource "aws_cloudwatch_metric_alarm" "lambda_errors" {
-  for_each = var.error_alarm_topic_arn ? toset([var.error_alarm_topic_arn]) : toset([])
+  for_each = var.error_alarm_topic_arn != null ? toset([var.error_alarm_topic_arn]) : toset([])
 
   alarm_name          = "lambda-${var.name}-errors"
   comparison_operator = "GreaterThanOrEqualToThreshold"
