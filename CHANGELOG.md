@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.2.0 - 2023-04-25
+
+Automatically configure an alarm for errors, which notifies a given alerting topic
+
 ## v1.1.1 - 2023-01-11
 
 Ignore state changes pertaining to the code that the Lambda hosts
