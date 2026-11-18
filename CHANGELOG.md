@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.3.0 - 2026-11-18
+
+Tag the error alarm with its Backplane Component, repository and severity, and prefix its description with the Component and severity, so alerts can be triaged by severity and joined to Backplane
+
 ## v1.2.0 - 2023-04-25
 
 Automatically configure an alarm for errors, which notifies a given alerting topic
