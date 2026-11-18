@@ -6,3 +6,4 @@ A Terraform module for creating AWS Lambdas at Wellcome Collection
 
 **Features:**
 - Log routing/retention/permissions configured for you
+- An error alarm when `error_alarm_topic_arn` is set, tagged with its Backplane Component (`alarm_component`), repository (`alarm_repository`) and severity (`alarm_severity`, default `medium`)
