@@ -17,6 +17,35 @@ variable "error_alarm_topic_arn" {
   default = null
 }
 
+variable "alarm_component" {
+  type        = string
+  default     = null
+  description = "Backplane Component name for the error alarm, set as the backplane:component tag and in the description prefix"
+}
+
+variable "alarm_repository" {
+  type        = string
+  default     = null
+  description = "Owning repository for the error alarm, e.g. wellcomecollection/catalogue-api, set as the github.com/project-slug tag"
+}
+
+variable "alarm_severity" {
+  type        = string
+  default     = "medium"
+  description = "Severity of the error alarm: high, medium or low"
+
+  validation {
+    condition     = contains(["high", "medium", "low"], var.alarm_severity)
+    error_message = "alarm_severity must be high, medium or low."
+  }
+}
+
+variable "alarm_tags" {
+  type        = map(string)
+  default     = {}
+  description = "Extra tags for the error alarm"
+}
+
 // Below this line are all arguments for the Lambda which will be used directly
 // Note that blocks need to be specified as objects
 // https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function#argument-reference
